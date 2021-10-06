@@ -1,0 +1,48 @@
+{
+
+  "manifest_version": 2,
+  "name": "Foxx Private Proxy",
+  "short_name": "Foxx VPN",
+  "description": "Uses the proxy API to send requests to specific hosts.",
+  "version": "1.0",
+  "browser_action": {
+    "browser_style": false,
+    "default_icon": "images/red.svg",
+    "default_popup": "Front/index.html",
+    "default_title": "Foxx Proxy"
+  },
+  "options_ui": {
+    "page": "Front/index.html",
+    "browser_style": true
+  },
+
+  "icons": {
+    "48": "images/gray.svg",
+    "96": "images/gray.svg",
+    "128": "images/gray.svg"
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "strict_min_version": "60.0a1"
+    }
+  },
+
+  "background": {
+    "scripts": [
+      "background/background.js"
+    ]
+  },
+  "permissions": [
+    "proxy", 
+    "storage", 
+    "webRequest",
+    "webRequestBlocking",
+    "notifications",
+    "<all_urls>",
+    "tabs",
+    "management"
+  ],
+  "default_locale": "en"
+
+}

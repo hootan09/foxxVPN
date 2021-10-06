@@ -1,0 +1,15 @@
+{
+  "name": "foxx",
+  "version": "1.0.0",
+  "description": "Foxx Proxy Server",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["VPN", "WebProxy", "Foxx"],
+  "author": "Niki",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

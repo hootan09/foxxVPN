@@ -1,0 +1,24 @@
+#direct-hosts {
+    display: block;
+    margin-top: 1em;
+  }
+
+  section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* display: block; */
+    margin-top: 1em;
+  }
+
+  .buttonWrapper {
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  #connectButton {
+    color: white;
+    background-color: red;
+    padding: 6px 10px;
+}
