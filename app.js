@@ -21,7 +21,7 @@ app.use('/', function(req, res) {
   try {
     const requestData = logRequest(req);
     if(requestData.originalUrl == '/'){
-      return res.status(200).send({
+      return res.status(200).json({
         uptime: process.uptime(),
         title: process.title,
         version: process.version,
