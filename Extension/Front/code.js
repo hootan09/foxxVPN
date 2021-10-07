@@ -12,13 +12,30 @@ connectBTN.addEventListener("click", ()=>{
   })
 });
 
+proxyHostInput.addEventListener("change", ()=>{
+  changeProxyServer();
+});
+
+proxyPortInput.addEventListener("change", ()=>{
+  changeProxyServer();
+});
+
 directHostsTextArea.addEventListener("change", ()=>{
   browser.storage.local.set({directHosts: directHostsTextArea.value.split("\n")});
 });
 
+
 function setConnectBtn (connected){
   connectBTN.style.background= connected ? "green" : "red";
   connectBTN.innerText = connected ? "disconnect" : "Connect";
+}
+
+function changeProxyServer(){
+  const proxyData = {
+    host: proxyHostInput.value,
+    port: +proxyPortInput.value
+  }
+  browser.storage.local.set({proxyData: proxyData});
 }
 
 //UI Update

@@ -17,7 +17,7 @@ app.use('/testrequest', async (req,res, next)=>{
 })
 
 
-app.use('/', function(req, res) {
+app.use('/a', function(req, res) {
   try {
     const requestData = logRequest(req);
 
