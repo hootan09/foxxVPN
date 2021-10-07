@@ -39,10 +39,10 @@ browser.proxy.onRequest.addListener(handleProxyRequest, {urls: ["<all_urls>"]});
 
 // On the request to open a webpage
 function handleProxyRequest(requestInfo) {
-// Read the web address of the page to be visited 
+  // Read the web address of the page to be visited 
   const url = new URL(requestInfo.url);
   // Determine whether the domain in the web address is on the blocked hosts list
-  if (!connected || directHosts.indexOf(url.hostname) > -1) {
+  if (!connected || directHosts.indexOf(url.hostname) > -1 || proxyData.host == url.hostname) {
     // Return instructions to open the requested webpage
     return {type: "direct"};
   }
