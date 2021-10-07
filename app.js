@@ -17,10 +17,16 @@ app.use('/testrequest', async (req,res, next)=>{
 })
 
 
-app.use('/a', function(req, res) {
+app.use('/', function(req, res) {
   try {
     const requestData = logRequest(req);
-
+    if(requestData.originalUrl == '/'){
+      return res.status(200).send({
+        uptime: process.uptime(),
+        title: process.title,
+        version: process.version,
+      })
+    }
     if (requestData.protocol == "https") {
         requestData.parsedPort = 443
         requestData.parsedSSL = https
