@@ -7,7 +7,7 @@ const { internalError, logRequest } = require('./utils/utils');
  
 const PORT = process.env.PORT || 3000;
 
-app.use('/testvpn', async (req,res, next)=>{
+app.use('/testrequest', async (req,res, next)=>{
 
     try {
         res.status(200).send(logRequest(req));
